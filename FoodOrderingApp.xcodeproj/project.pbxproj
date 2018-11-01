@@ -15,6 +15,7 @@
 		0FB7B9B02189E29B00619D2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7B9AE2189E29B00619D2D /* LaunchScreen.storyboard */; };
 		0FB7B9BB2189E29B00619D2D /* FoodOrderingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7B9BA2189E29B00619D2D /* FoodOrderingAppTests.swift */; };
 		0FB7B9C62189E29B00619D2D /* FoodOrderingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7B9C52189E29B00619D2D /* FoodOrderingAppUITests.swift */; };
+		0FF69F92218B557600A88521 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF69F91218B557600A88521 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0FB7B9C12189E29B00619D2D /* FoodOrderingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodOrderingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB7B9C52189E29B00619D2D /* FoodOrderingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderingAppUITests.swift; sourceTree = "<group>"; };
 		0FB7B9C72189E29B00619D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF69F91218B557600A88521 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0FB7B9AE2189E29B00619D2D /* LaunchScreen.storyboard */,
 				0FB7B9B12189E29B00619D2D /* Info.plist */,
 				0FB7B9A92189E29900619D2D /* FoodOrderingApp.xcdatamodeld */,
+				0FF69F91218B557600A88521 /* HomeVC.swift */,
 			);
 			path = FoodOrderingApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB7B9A52189E29900619D2D /* ViewController.swift in Sources */,
+				0FF69F92218B557600A88521 /* HomeVC.swift in Sources */,
 				0FB7B9A32189E29900619D2D /* AppDelegate.swift in Sources */,
 				0FB7B9AB2189E29900619D2D /* FoodOrderingApp.xcdatamodeld in Sources */,
 			);
@@ -438,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FoodOrderingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FoodOrderingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
