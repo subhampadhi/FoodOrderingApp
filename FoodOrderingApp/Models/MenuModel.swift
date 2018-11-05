@@ -10,8 +10,8 @@ import Foundation
 
 struct MenuModel{
     
-    var item_price: String
+    var item_price: Int
     var image_url: String
     var item_name: String
-    var average_rating: String
+    var average_rating: Float
 }
