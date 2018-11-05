@@ -14,6 +14,8 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
     var selectedData: [[MenuModel]] = [[]]
     var orderCount:[Int] = []
     var cartData:[MenuModel] = []
+    var totalCost = 0
+    var couponCodeEntered = false
     
     func showAlert(title: String, message: String, presenter: UIViewController) {
         let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
@@ -25,6 +27,8 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
         
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cartData.removeAll()
+        orderCount.removeAll()
         navigationController?.navigationBar.isTranslucent = false
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         titleLabel.text = "Cart"
@@ -43,6 +47,19 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
         }
     }
         setUpViews()
+        amountLabel.text =  "\(getTotalBill() + 30)"
+    }
+    
+    func getTotalBill() -> Int{
+        for data in selectedData {
+            if data.count > 0 {
+                orderCount.append(data.count)
+                for item in data {
+                   self.totalCost = self.totalCost + item.item_price
+                }
+            }
+        }
+        return totalCost
     }
     
     var submitButton: UIButton = {
@@ -119,11 +136,32 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
     }()
     
     @objc func checkPromo() {
-        
+        if !couponCodeEntered {
+        if promoCodeTextField.text == "FREEDEL" {
+            if totalCost > 100 {
+                totalCost = totalCost - 30
+                self.amountLabel.text = "\(totalCost)"
+                couponCodeEntered = true
+            }
+        } else if promoCodeTextField.text == "F22LABS" {
+            if totalCost > 400 {
+                totalCost = totalCost - ((20/100) * totalCost)
+                self.amountLabel.text = "\(totalCost)"
+                couponCodeEntered = true
+            }
+        }else {
+            showAlert(title: "Oops!", message: "Looks like the coupon code is invalid for the price", presenter: self)
+        }
+        }
     }
     
     @objc func submit() {
-        
+        if totalCost > 0 {
+            self.showAlertWithCustomFunction(title: "Yay!", message: "Your order has been Placed !", presenter: self, handler: {
+                action in
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
     
     lazy var cartTable: UITableView = {
@@ -142,7 +180,10 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
             }
         }
         if count == 0 {
-            showAlert(title: "Oops", message: "Your cart is empty!", presenter: self)
+            self.showAlertWithCustomFunction(title: "Oops!", message: "Seems like your cart is empty !", presenter: self, handler: {
+                action in
+                self.navigationController?.popViewController(animated: true)
+            })
         }
         return count
     }
@@ -214,6 +255,14 @@ class CartVC: UIViewController , UITableViewDataSource ,UITableViewDelegate{
         cartTable.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         cartTable.bottomAnchor.constraint(equalTo: bottomborder2.topAnchor).isActive = true
         
+    }
+    
+    func showAlertWithCustomFunction(title: String, message: String, presenter: UIViewController, handler: ((UIAlertAction) -> Swift.Void)?) {
+        let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: handler))
+        
+        presenter.present(alert, animated: true, completion: nil)
     }
  }
 

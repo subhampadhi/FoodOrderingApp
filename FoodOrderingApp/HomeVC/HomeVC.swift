@@ -51,7 +51,6 @@ class HomeVC: UIViewController , UITableViewDelegate , UITableViewDataSource , M
         self.navigationItem.leftBarButtonItem = cartButton
         
         setUpViews()
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,6 +119,7 @@ class HomeVC: UIViewController , UITableViewDelegate , UITableViewDataSource , M
                 cell.orderCountLabel.text = "\(self.selectedData[indexPath.row].count)"
             }
         }
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -346,6 +346,5 @@ class MenuTableViewCell: UITableViewCell{
         let minusTap = UITapGestureRecognizer(target: self, action: #selector(MenuTableViewCell.minusTapped))
         minusImage.addGestureRecognizer(minusTap)
         minusImage.isUserInteractionEnabled = true
-        
     }
 }

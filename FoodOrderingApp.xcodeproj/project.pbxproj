@@ -16,7 +16,6 @@
 		0FB7B9BB2189E29B00619D2D /* FoodOrderingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7B9BA2189E29B00619D2D /* FoodOrderingAppTests.swift */; };
 		0FB7B9C62189E29B00619D2D /* FoodOrderingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7B9C52189E29B00619D2D /* FoodOrderingAppUITests.swift */; };
 		0FD329D8218B8B0D006E9FE7 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD329D7218B8B0D006E9FE7 /* MenuModel.swift */; };
-		0FE79190218CBD64006700CF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE7918F218CBD64006700CF /* TabBar.swift */; };
 		0FE79193218CBFBF006700CF /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE79192218CBFBF006700CF /* CartVC.swift */; };
 		0FE79196218CC8FA006700CF /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE79195218CC8FA006700CF /* FilterVC.swift */; };
 		0FF69F92218B557600A88521 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF69F91218B557600A88521 /* HomeVC.swift */; };
@@ -58,7 +57,6 @@
 		0FB7B9C52189E29B00619D2D /* FoodOrderingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOrderingAppUITests.swift; sourceTree = "<group>"; };
 		0FB7B9C72189E29B00619D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FD329D7218B8B0D006E9FE7 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
-		0FE7918F218CBD64006700CF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		0FE79192218CBFBF006700CF /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		0FE79195218CC8FA006700CF /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		0FF69F91218B557600A88521 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				0FB7B9AE2189E29B00619D2D /* LaunchScreen.storyboard */,
 				0FB7B9B12189E29B00619D2D /* Info.plist */,
 				0FB7B9A92189E29900619D2D /* FoodOrderingApp.xcdatamodeld */,
-				0FE7918F218CBD64006700CF /* TabBar.swift */,
 			);
 			path = FoodOrderingApp;
 			sourceTree = "<group>";
@@ -354,12 +351,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodOrderingApp/Pods-FoodOrderingApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -434,7 +433,6 @@
 				0FF69F92218B557600A88521 /* HomeVC.swift in Sources */,
 				0FE79193218CBFBF006700CF /* CartVC.swift in Sources */,
 				0FD329D8218B8B0D006E9FE7 /* MenuModel.swift in Sources */,
-				0FE79190218CBD64006700CF /* TabBar.swift in Sources */,
 				0FB7B9A32189E29900619D2D /* AppDelegate.swift in Sources */,
 				0FB7B9AB2189E29900619D2D /* FoodOrderingApp.xcdatamodeld in Sources */,
 			);

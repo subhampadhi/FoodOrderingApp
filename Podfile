@@ -12,6 +12,7 @@ target 'FoodOrderingApp' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 4.0'
+  pod 'IQKeyboardManagerSwift'
   
   target 'FoodOrderingAppTests' do
     inherit! :search_paths
